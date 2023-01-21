@@ -1,5 +1,7 @@
 ## Tactable technical test
-instructions in [backend-code-challenge.md](./backend-code-challenge.md)
+Instructions in [backend-code-challenge.md](./backend-code-challenge.md)
+
+The **TodoClient** and **ApiManager** classes are located in the folder `src/classes`
 
 ## Installation
 ```bash
