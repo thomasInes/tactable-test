@@ -10,4 +10,4 @@ npm install
 ```bash
 npm run dev
 ```
-then go to https://localhost:3000 
+then go to https://localhost:3000 to see the API data fetched by the app

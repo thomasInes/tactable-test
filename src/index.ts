@@ -1,21 +1,22 @@
-import express, { Application, Request, Response } from 'express';
+import express, { Application } from 'express';
 import bodyParser from 'body-parser';
+import * as APIController from './controllers/Api';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
 const app: Application = express();
 const PORT = 3000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/', async (req: Request, res: Response): Promise<Response> => {
-  return res.status(200).send({
-    message: 'Hello World!',
-  });
-});
+app.get('/', APIController.showData);
 
 try {
   app.listen(PORT, (): void => {
     console.log(`Connected successfully on port ${PORT}`);
   });
-} catch (error: any) {
-  console.error(`Error occured: ${error.message}`);
+} catch (error: unknown) {
+  console.error(`Error occured: ${(error as Error).message}`);
 }
