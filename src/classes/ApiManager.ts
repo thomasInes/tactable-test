@@ -12,7 +12,6 @@ export class ApiManager implements IApiManager {
 
   /**
    *
-   * @param url string: endpoint to hit
    * @returns the data from the endpoint if the response is successful
    */
   public fetchData = () => {
