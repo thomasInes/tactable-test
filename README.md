@@ -1,7 +1,9 @@
 ## Tactable technical test
 Instructions in [backend-code-challenge.md](./backend-code-challenge.md)
 
-The **TodoClient** and **ApiManager** classes are located in the folder `src/classes`
+- The **TodoClient** and **ApiManager** classes are located in the folder `src/classes`
+- To run the unit tests, run `npm run test:unit`
+- To run the integration tests, run `npm run test:integration`
 
 ## Installation
 ```bash
