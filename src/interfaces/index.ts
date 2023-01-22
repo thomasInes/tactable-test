@@ -1,6 +1,6 @@
 export interface IApiManager {
-    fetchData(): Promise<string | object>
+  fetchData(): Promise<string | object>;
 }
 export interface IHttpClient {
-    get?(url: string): Promise<string | object>
+  get?(url: string): Promise<string | object>;
 }

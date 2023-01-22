@@ -1,7 +1,7 @@
 import express, { Application } from 'express';
 import bodyParser from 'body-parser';
-import * as APIController from './controllers/Api';
 import dotenv from 'dotenv';
+import * as APIController from './controllers/Api';
 
 dotenv.config();
 
