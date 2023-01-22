@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import { StatusCodes } from 'http-status-codes';
 import { container } from "../classes/inversify.config";
 import { ApiManager } from "../classes/ApiManager";
 import { IApiManager } from "../interfaces";
@@ -12,8 +13,8 @@ import { IApiManager } from "../interfaces";
 export const showData = async (req: Request, res: Response): Promise<Response> => {
     try {
         const Api = container.get<IApiManager>(ApiManager);
-        return res.status(200).send(await Api.fetchData());
+        return res.status(StatusCodes.OK).send(await Api.fetchData());
     } catch (error) {
-        return res.status(500).send(error);
+        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).send(error);
     }
 }

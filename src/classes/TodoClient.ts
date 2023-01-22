@@ -1,6 +1,5 @@
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { injectable } from "inversify";
-import { StatusCodes } from 'http-status-codes';
 import { IHttpClient } from "../interfaces";
 
 @injectable()
@@ -11,11 +10,14 @@ export class TodoClient implements IHttpClient {
      * @returns the data from the endpoint if the response is successful 
      */
     public get = async (url: string) => {
-        const response = await axios.get(url);
-        
-        if (response.status !== StatusCodes.OK)
-            throw new Error(`Unsuccesful API response: status code(${response.status}) body(${response.data})`)
+        try {
+            const response = await axios.get(url)
+            return response.data;
+        } catch (error: unknown) {
+            throw new Error('Unsuccesful API response: '
+                + `status code(${(error as AxiosError).response?.status}) `
+                + `data(${JSON.stringify((error as AxiosError).response?.data)})`)
+        }
 
-        return response.data;
     }
 }
