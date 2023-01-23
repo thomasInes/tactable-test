@@ -6,6 +6,7 @@ Instructions in [backend-code-challenge.md](./backend-code-challenge.md)
 - To run the integration tests, run `npm run test:integration`
 
 ## Installation
+node 14.21.2 and npm 6.14.17 recommended
 ```bash
 npm install
 ```
